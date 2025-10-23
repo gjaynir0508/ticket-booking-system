@@ -169,6 +169,8 @@ Build & Push Docker Image → Builds and pushes image to Docker Hub
 
 Deploy to Kubernetes → Applies manifests to cluster
 
+![Pushed to docker hub](images/docker-hub.png)
+
 ## 4. Deployment and Orchestration (Kubernetes)
 
 Deploy commands
