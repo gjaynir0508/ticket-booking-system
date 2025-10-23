@@ -1,0 +1,14 @@
+{
+	"name": "ticket-booking-app",
+	"author": "Jayanth Gudimella",
+	"version": "1.0.0",
+	"description": "Simple ticket booking demo",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js",
+		"test": "node test.js || true"
+	},
+	"dependencies": {
+		"express": "^4.18.2"
+	}
+}

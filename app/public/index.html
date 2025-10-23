@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ticket Booking Demo</title>
+	</head>
+	<body>
+		<h1>Ticket Booking Demo</h1>
+		<form id="form">
+			<input id="name" placeholder="Your name" required />
+			<input id="event" placeholder="Event name" required />
+			<button type="submit">Book</button>
+		</form>
+		<pre id="result"></pre>
+		<script>
+			const form = document.getElementById("form");
+			const result = document.getElementById("result");
+			form.addEventListener("submit", async (e) => {
+				e.preventDefault();
+				const name = document.getElementById("name").value;
+				const event = document.getElementById("event").value;
+				const res = await fetch("/api/book", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ name, event }),
+				});
+				result.innerText = await res.text();
+			});
+		</script>
+	</body>
+</html>
