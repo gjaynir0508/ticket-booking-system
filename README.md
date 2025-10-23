@@ -153,3 +153,54 @@ Payload URL: `http://<jenkins-server>/github-webhook/`
 Content type: application/json
 
 Events: “Push”
+
+![Website Preview](images/website.png)
+
+Pipeline stages
+
+Checkout → Pulls latest code
+
+Build & Test → Installs dependencies and runs tests
+
+Build & Push Docker Image → Builds and pushes image to Docker Hub
+
+Deploy to Kubernetes → Applies manifests to cluster
+
+## 4. Deployment and Orchestration (Kubernetes)
+
+Deploy commands
+
+```sh
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+kubectl apply -f k8s/hpa.yaml
+```
+
+Verify deployment
+
+```sh
+kubectl get pods -l app=ticket-booking
+kubectl get svc ticket-booking-service
+kubectl describe deployment ticket-booking-deployment
+kubectl get hpa
+```
+
+Scale manually
+
+```sh
+kubectl scale deployment ticket-booking-deployment --replicas=5
+```
+
+## 5. GitHub and Jenkins Integration
+
+Configure webhook
+
+Go to GitHub → Settings → Webhooks → Add Webhook
+
+Payload URL: http://<JENKINS_HOST>/github-webhook/
+
+Content type: application/json
+
+Trigger on: “Just the push event”
+
+Verify delivery: should show 200 OK
