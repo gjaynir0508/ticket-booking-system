@@ -133,6 +133,7 @@ curl -X POST http://localhost:3000/api/book -H "Content-Type: application/json" 
 ```
 
 ![Docker build](images/docker-build.png)
+![Docker Push to DockerHub](images/docker-hub-push.png)
 
 ## 3. Continuous Integration & Delivery (Jenkins)
 
