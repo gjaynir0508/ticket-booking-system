@@ -132,6 +132,8 @@ curl http://localhost:3000/
 curl -X POST http://localhost:3000/api/book -H "Content-Type: application/json" -d '{"name":"Alice","event":"Concert"}'
 ```
 
+![Docker build](images/docker-build.png)
+
 ## 3. Continuous Integration & Delivery (Jenkins)
 
 Jenkins pipeline setup

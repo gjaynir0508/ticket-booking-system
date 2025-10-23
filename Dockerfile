@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 
 # Copy package.json and install early to benefit from layer caching
 COPY app/package.json ./
-RUN npm ci --only=production
+RUN npm i
 
 # Copy app
 COPY app/ ./
